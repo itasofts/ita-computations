@@ -1,0 +1,563 @@
+import 'dart:io';
+import 'dart:async'; // For Timer and StreamSubscription
+import 'dart:typed_data';
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:csv/csv.dart';
+import 'package:printing/printing.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../models/coordinate.dart';
+import 'package:universal_platform/universal_platform.dart';
+import 'package:window_manager/window_manager.dart';
+
+class EnterCoordinatesPage extends StatefulWidget {
+  final Function(List<Coordinate>, String) onSave;
+  final List<Coordinate> coordinates;
+  final String selectedUnit;
+
+  EnterCoordinatesPage({
+    required this.onSave,
+    required this.coordinates,
+    required this.selectedUnit,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  EnterCoordinatesPageState createState() => EnterCoordinatesPageState();
+}
+
+class EnterCoordinatesPageState extends State<EnterCoordinatesPage> with WindowListener {
+  late String selectedUnit;
+  List<String> units = ['Meters', 'Feet', 'Acres', 'Hectares'];
+  late List<Coordinate> coordinates;
+  final List<TextEditingController> _xControllers = [];
+  final List<TextEditingController> _yControllers = [];
+  final List<TextEditingController> _beaconControllers = [];
+
+  TextEditingController _numRowsController = TextEditingController();
+  TextEditingController _pasteController = TextEditingController();
+  DateTime? _lastBackPressedTime;
+
+  Timer? _timer; // Example: Timer for periodic tasks
+  StreamSubscription? _subscription; // Example: Stream subscription
+
+  @override
+  void initState() {
+    super.initState();
+    selectedUnit = widget.selectedUnit;
+    coordinates = List.from(widget.coordinates);
+    _initializeControllers(); // Initialize controllers for existing coordinates
+
+    // Platform-specific initialization
+    if (UniversalPlatform.isDesktop) {
+      windowManager.addListener(this);
+      _initializeWindowManager();
+    }
+
+    // Example: Start a timer (for demonstration purposes)
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      print('Timer tick');
+    });
+  }
+
+  Future<void> _initializeWindowManager() async {
+    if (UniversalPlatform.isDesktop) {
+      await windowManager.ensureInitialized();
+      await windowManager.setPreventClose(true); // Prevent the window from closing immediately
+    }
+  }
+
+  // Initialize controllers for existing coordinates
+  void _initializeControllers() {
+    for (var coord in coordinates) {
+      _xControllers.add(TextEditingController(text: coord.x.toString()));
+      _yControllers.add(TextEditingController(text: coord.y.toString()));
+      _beaconControllers.add(TextEditingController(text: coord.beacon));
+    }
+  }
+
+  @override
+  void dispose() {
+    // Cancel any pending timers or stream subscriptions
+    _timer?.cancel();
+    _subscription?.cancel();
+
+    // Platform-specific cleanup
+    if (UniversalPlatform.isDesktop) {
+      windowManager.removeListener(this);
+    }
+    super.dispose();
+  }
+
+  @override
+  void onWindowClose() async {
+    if (UniversalPlatform.isDesktop) {
+      bool shouldClose = await _showExitConfirmationDialog();
+      if (!shouldClose) {
+        // If the user clicks "Cancel", allow the window to close immediately on the next attempt
+        windowManager.setPreventClose(false);
+      }
+    }
+  }
+
+  Future<bool> _showExitConfirmationDialog() async {
+    return await showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Exit Application'),
+        content: const Text('Click "Cancel" and then click the close button again if you want to exit.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false), // Close the dialog
+            child: const Text('Cancel'),
+          ),
+        ],
+      ),
+    ) ?? false;
+  }
+
+  Future<bool> _onWillPop() async {
+    if (UniversalPlatform.isAndroid) {
+      final now = DateTime.now();
+      if (_lastBackPressedTime == null ||
+          now.difference(_lastBackPressedTime!) > const Duration(seconds: 2)) {
+        setState(() {
+          _lastBackPressedTime = now;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Press back again to exit')),
+        );
+        return false;
+      }
+      return true;
+    } else {
+      // For non-Android platforms, use the exit confirmation dialog
+      bool shouldClose = await _showExitConfirmationDialog();
+      return shouldClose;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return WillPopScope(
+      onWillPop: _onWillPop,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  IconButton(
+                    icon: Icon(FontAwesomeIcons.facebook, color: Colors.blue[700]),
+                    onPressed: () => _launchURL('https://www.facebook.com/yourpage'),
+                  ),
+                  IconButton(
+                    icon: Icon(FontAwesomeIcons.twitter, color: Colors.blue[400]),
+                    onPressed: () => _launchURL('https://www.twitter.com/yourhandle'),
+                  ),
+                  IconButton(
+                    icon: Icon(FontAwesomeIcons.instagram, color: Colors.pink),
+                    onPressed: () => _launchURL('https://www.instagram.com/yourhandle'),
+                  ),
+                  IconButton(
+                    icon: Icon(FontAwesomeIcons.linkedin, color: Colors.blue[800]),
+                    onPressed: () => _launchURL('https://www.linkedin.com/in/yourprofile'),
+                  ),
+                  IconButton(
+                    icon: Icon(FontAwesomeIcons.github, color: Colors.black),
+                    onPressed: () => _launchURL('https://www.github.com/yourusername'),
+                  ),
+                  IconButton(
+                    icon: Icon(FontAwesomeIcons.youtube, color: Colors.red),
+                    onPressed: () => _launchURL('https://www.youtube.com/yourusername'),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          actions: [
+            PopupMenuButton<String>(
+              onSelected: (value) {
+                if (value == 'faq') {
+                  _navigateToFAQ();
+                } else if (value == 'eula') {
+                  _showEULA();
+                } else if (value == 'android') {
+                  _launchURL('https://play.google.com/store/apps/details?id=your.package.name');
+                } else if (value == 'ios') {
+                  _launchURL('https://apps.apple.com/app/idyour-app-id');
+                } else if (value == 'windows') {
+                  _launchURL('https://your-windows-download-link.com');
+                }
+              },
+              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                const PopupMenuItem<String>(
+                  value: 'faq',
+                  child: Text('FAQ'),
+                ),
+                const PopupMenuItem<String>(
+                  value: 'eula',
+                  child: Text('EULA'),
+                ),
+                PopupMenuItem<String>(
+                  value: 'android',
+                  child: Row(
+                    children: [
+                      Icon(FontAwesomeIcons.googlePlay, color: Colors.green),
+                      const SizedBox(width: 10),
+                      const Text('Download Android Version'),
+                    ],
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'ios',
+                  child: Row(
+                    children: [
+                      Icon(FontAwesomeIcons.apple, color: Colors.grey[700]),
+                      const SizedBox(width: 10),
+                      const Text('Download iOS Version'),
+                    ],
+                  ),
+                ),
+                PopupMenuItem<String>(
+                  value: 'windows',
+                  child: Row(
+                    children: [
+                      Icon(FontAwesomeIcons.windows, color: Colors.blue),
+                      const SizedBox(width: 10),
+                      const Text('Download Windows Version'),
+                    ],
+                  ),
+                ),
+                const PopupMenuItem<String>(
+                  enabled: true,
+                  child: Text('© 2025 iTAsofts', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                ),
+              ],
+            ),
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Enter Your Coordinates Here",
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  softWrap: true,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 150,
+                      child: TextField(
+                        controller: _numRowsController,
+                        decoration: const InputDecoration(
+                          labelText: "Number of Rows",
+                          border: OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    ElevatedButton(
+                      onPressed: _addMultipleRows,
+                      child: const Text("Add Rows"),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 200,
+                      child: TextField(
+                        controller: _pasteController,
+                        decoration: const InputDecoration(
+                          labelText: "Paste Coordinates (X, Y, Beacon per line)",
+                          border: OutlineInputBorder(),
+                        ),
+                        maxLines: null,
+                        keyboardType: TextInputType.multiline,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedButton(
+                          onPressed: _pasteCoordinates,
+                          child: const Text("Paste & Add Rows"),
+                        ),
+                        ElevatedButton(
+                          onPressed: _importCsv,
+                          child: const Text("Import CSV (N, E, L)"),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedButton(
+                          onPressed: _clearAllRows,
+                          child: const Text("Clear All Rows"),
+                        ),
+                        ElevatedButton(
+                          onPressed: _saveCoordinates,
+                          child: const Text("Save and Calculate"),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: coordinates.length,
+                itemBuilder: (context, index) => _buildCoordinateRow(index),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _navigateToFAQ() async {
+    try {
+      String faqText = await DefaultAssetBundle.of(context).loadString('assets/faq.txt');
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text("©Frequently Asked Questions"),
+          content: SingleChildScrollView(
+            child: Text(faqText),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text("Close"),
+            ),
+          ],
+        ),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to load FAQ: $e')),
+      );
+    }
+  }
+
+  void _showEULA() async {
+    try {
+      String eulaText = await DefaultAssetBundle.of(context).loadString('assets/eula.txt');
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text("End User License Agreement"),
+          content: SingleChildScrollView(
+            child: Text(eulaText),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text("Close"),
+            ),
+          ],
+        ),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to load EULA: $e')),
+      );
+    }
+  }
+
+  Future<void> _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Could not launch $url')),
+      );
+    }
+  }
+
+  void _addMultipleRows() {
+    int numRows = int.tryParse(_numRowsController.text) ?? 0;
+    if (numRows > 0) {
+      setState(() {
+        for (int i = 0; i < numRows; i++) {
+          coordinates.add(Coordinate(x: 0, y: 0, beacon: ''));
+          _xControllers.add(TextEditingController());
+          _yControllers.add(TextEditingController());
+          _beaconControllers.add(TextEditingController());
+        }
+      });
+    }
+  }
+
+  void _pasteCoordinates() {
+    List<String> lines = _pasteController.text.trim().split('\n');
+    setState(() {
+      for (String line in lines) {
+        List<String> values = line.split(RegExp(r'[\s,]+'));
+        if (values.length >= 2) {
+          double x = double.tryParse(values[0]) ?? 0;
+          double y = double.tryParse(values[1]) ?? 0;
+          String beacon = values.length > 2 ? values.sublist(2).join(' ') : '';
+
+          coordinates.add(Coordinate(x: x, y: y, beacon: beacon));
+          _xControllers.add(TextEditingController(text: x.toString()));
+          _yControllers.add(TextEditingController(text: y.toString()));
+          _beaconControllers.add(TextEditingController(text: beacon));
+        }
+      }
+    });
+  }
+
+  void _removeRow(int index) {
+    setState(() {
+      coordinates.removeAt(index);
+      _xControllers.removeAt(index);
+      _yControllers.removeAt(index);
+      _beaconControllers.removeAt(index);
+    });
+  }
+
+  void _clearAllRows() {
+    setState(() {
+      coordinates.clear();
+      _xControllers.clear();
+      _yControllers.clear();
+      _beaconControllers.clear();
+    });
+  }
+
+  void _saveCoordinates() {
+    List<Coordinate> validCoordinates = [];
+    for (int i = 0; i < coordinates.length; i++) {
+      double x = double.tryParse(_xControllers[i].text) ?? 0;
+      double y = double.tryParse(_yControllers[i].text) ?? 0;
+      String beacon = _beaconControllers[i].text;
+      validCoordinates.add(Coordinate(x: x, y: y, beacon: beacon));
+    }
+
+    widget.onSave(validCoordinates, selectedUnit);
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text("Coordinates saved successfully!")),
+    );
+  }
+
+  Future<void> _importCsv() async {
+    try {
+      FilePickerResult? result = await FilePicker.platform.pickFiles(
+        type: FileType.custom,
+        allowedExtensions: ['csv'],
+        withData: true,
+      );
+
+      if (result != null && result.files.isNotEmpty) {
+        PlatformFile file = result.files.first;
+        String csvString = "";
+
+        if (file.bytes != null && file.bytes!.isNotEmpty) {
+          csvString = utf8.decode(file.bytes!, allowMalformed: true);
+        } else if (file.path != null) {
+          File csvFile = File(file.path!);
+          if (!csvFile.existsSync() || await csvFile.length() == 0) {
+            throw Exception("The selected file is empty.");
+          }
+          csvString = await csvFile.readAsString(encoding: utf8);
+        } else {
+          throw Exception("Could not read the CSV file.");
+        }
+
+        if (csvString.trim().isEmpty) {
+          throw Exception("The CSV file is empty.");
+        }
+
+        List<List<dynamic>> csvTable = const CsvToListConverter().convert(csvString);
+
+        _clearAllRows();
+
+        for (int i = 0; i < csvTable.length; i++) {
+          List<dynamic> row = csvTable[i];
+          if (row.length >= 3) {
+            setState(() {
+              coordinates.add(Coordinate(
+                x: double.tryParse(row[0].toString()) ?? 0,
+                y: double.tryParse(row[1].toString()) ?? 0,
+                beacon: row[2].toString(),
+              ));
+              _xControllers.add(TextEditingController(text: row[0].toString()));
+              _yControllers.add(TextEditingController(text: row[1].toString()));
+              _beaconControllers.add(TextEditingController(text: row[2].toString()));
+            });
+          }
+        }
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Error importing CSV: $e")),
+      );
+    }
+  }
+
+  Widget _buildCoordinateRow(int index) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: _xControllers[index],
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(labelText: 'X Coordinate'),
+            ),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: TextField(
+              controller: _yControllers[index],
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(labelText: 'Y Coordinate'),
+            ),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: TextField(
+              controller: _beaconControllers[index],
+              decoration: const InputDecoration(labelText: 'Beacon Label'),
+            ),
+          ),
+          IconButton(
+            icon: const Icon(Icons.remove_circle_outline, color: Colors.red),
+            onPressed: () => _removeRow(index),
+          ),
+        ],
+      ),
+    );
+  }
+}
