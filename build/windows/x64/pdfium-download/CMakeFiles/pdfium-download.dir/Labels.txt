@@ -1,0 +1,14 @@
+# Target labels
+ pdfium-download
+# Source files and their labels
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/pdfium-download
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/f4da4f702e12db6fdc071daf182310bc/pdfium-download.rule
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/945c42770870611167dc7ff1f51b31ea/pdfium-download-complete.rule
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/1ff74932732a5f332bd64ad824e2d995/pdfium-download-build.rule
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/1ff74932732a5f332bd64ad824e2d995/pdfium-download-configure.rule
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/1ff74932732a5f332bd64ad824e2d995/pdfium-download-download.rule
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/1ff74932732a5f332bd64ad824e2d995/pdfium-download-install.rule
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/1ff74932732a5f332bd64ad824e2d995/pdfium-download-mkdir.rule
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/1ff74932732a5f332bd64ad824e2d995/pdfium-download-patch.rule
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/1ff74932732a5f332bd64ad824e2d995/pdfium-download-test.rule
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/1ff74932732a5f332bd64ad824e2d995/pdfium-download-update.rule

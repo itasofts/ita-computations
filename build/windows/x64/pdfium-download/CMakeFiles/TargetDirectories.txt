@@ -1,0 +1,3 @@
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/pdfium-download.dir
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/ALL_BUILD.dir
+D:/ITA/Development/tt/ita_computations/build/windows/x64/pdfium-download/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,87 @@
+©Frequently Asked Questions (FAQ)
+
+1. What does this app do?
+   - This app is designed to help you perform various geospatial calculations, including:
+     - Computing bearing and distance between coordinates.
+     - Calculating area from coordinates and generating area computation sheets.
+     - Generating Bearing and Distance sheets.
+     - Generating Plan Data sheets with calculated area.
+     - Generating Beacon Index sheets.
+   - It also supports light and dark modes and provides links to download the app for Android, iOS, and Windows.
+
+2. How do I compute bearing and distance between coordinates?
+   - Enter the coordinates for Point 1 and Point 2.
+   - Click the "Save and Calculate" button.
+   - The app will compute the bearing and distance between the two points and generate a Bearing and Distance sheet.
+
+3. Can I compute area from coordinates?
+   - Yes! Enter the coordinates for the boundary points of the area.
+   - Click the "Save and Calculate" button.
+   - The app will compute the area and generate an Area Computation sheet.
+
+4. What is a Bearing and Distance sheet?
+   - A Bearing and Distance sheet displays the calculated bearing (direction) and distance between two points.
+   - The app generates two types of Bearing and Distance sheets: one for Point 1 to Point 2 and another for Point 2 to Point 1.
+
+5. What is a Plan Data sheet?
+   - A Plan Data sheet includes the bearings and distances along with the calculated area.
+   - It is useful for quickly verifying the calculated bearings and distances along with the calculated area without going to check through the bearing and distance from coordinate’s sheet and the area computation sheet.
+
+6. What is a Beacon Index sheet?
+   - A Beacon Index sheet lists all the beacons (markers) along with their coordinates.
+   - It helps in organizing and referencing beacon data.
+
+7. How do I switch between light and dark mode?
+   - Open the menu (three dots in the top-right corner).
+   - Select "Toggle Dark Mode" to switch between light and dark themes.
+
+8. How do I download the app for my platform?
+   - Open the menu (three dots in the top-right corner).
+   - Select "Download Android Version", "Download iOS Version", or "Download Windows Version" to get the app for your device.
+
+9. Can I import coordinates from a CSV file?
+   - Yes! Click the "Import CSV (N, E, L)" button to import coordinates from a CSV file.
+   - Ensure the CSV file has columns for Northing (N), Easting (E), and Beacon Label (L).
+   - Click on the "Save and Calculate" button.
+10. How do I clear all entered coordinates?
+    - Click the "Clear All Rows" button to remove all entered coordinates and start fresh.
+
+11. How do I save my calculations?
+    - After entering the coordinates, click the "Save and Calculate" button.
+    - The app will generate the required sheets (Bearing and Distance, Area Computation, Plan Data, or Beacon Index) dynamically.
+
+12. Can I share the generated sheets?
+    - Yes! The generated sheets can be saved as PDFs or printed directly from the app.
+
+13. How do I contact support or provide feedback?
+    - You can reach out to us through our social media platforms:
+      - Facebook: [Your Facebook Page]
+      - Twitter: [Your Twitter Handle]
+      - Instagram: [Your Instagram Handle]
+      - LinkedIn: [Your LinkedIn Profile]
+      - GitHub: [Your GitHub Profile]
+      - YouTube: [Your YouTube Channel]
+
+14. Is my data secure?
+    - Yes! All calculations are performed locally on your device, and no data is shared with external servers.
+
+15. Can I use this app offline?
+    - Yes! The app works entirely offline, so you can use it anywhere without an internet connection.
+
+16. What units does the app support for calculations?
+    - The app supports multiple units, including Meters, Feet, Acres, and Hectares. You can select your preferred unit from the settings.
+
+17. How do I update the app?
+    - For Android and iOS, updates are available through the Google Play Store and Apple App Store, respectively.
+    - For Windows, updates can be downloaded from the provided link.
+
+18. What if I encounter an issue or bug?
+    - Please report any issues or bugs through our GitHub repository or contact us via email at [Your Support Email].
+
+19. Can I customize the generated sheets?
+    - Currently, the app generates standard sheets. Customization options may be added in future updates.
+
+20. How do I provide suggestions for new features?
+    - We welcome your feedback! You can share your suggestions through our social media platforms or GitHub repository.
+
+Thank you for using our app! If you have any further questions, feel free to reach out to us.

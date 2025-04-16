@@ -1,0 +1,243 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.ita_computations"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="35" />
+10    <!--
+11         Required to query activities that can process text, see:
+12         https://developer.android.com/training/package-visibility and
+13         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+14
+15         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+16    -->
+17    <queries>
+17-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:39:5-44:15
+18        <intent>
+18-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:40:9-43:18
+19            <action android:name="android.intent.action.PROCESS_TEXT" />
+19-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:41:13-72
+19-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:41:21-70
+20
+21            <data android:mimeType="text/plain" />
+21-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:42:13-50
+21-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:42:19-48
+22        </intent>
+23        <intent>
+23-->[:file_picker] D:\ITA\Development\tt\ita_computations\build\file_picker\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:9-12:18
+24            <action android:name="android.intent.action.GET_CONTENT" />
+24-->[:file_picker] D:\ITA\Development\tt\ita_computations\build\file_picker\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-72
+24-->[:file_picker] D:\ITA\Development\tt\ita_computations\build\file_picker\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:21-69
+25
+26            <data android:mimeType="*/*" />
+26-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:42:13-50
+26-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:42:19-48
+27        </intent>
+28    </queries>
+29
+30    <permission
+30-->[androidx.core:core:1.13.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\8cf478dec41eed746328fa8046755ba2\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+31        android:name="com.example.ita_computations.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+31-->[androidx.core:core:1.13.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\8cf478dec41eed746328fa8046755ba2\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+32        android:protectionLevel="signature" />
+32-->[androidx.core:core:1.13.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\8cf478dec41eed746328fa8046755ba2\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+33
+34    <uses-permission android:name="com.example.ita_computations.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+34-->[androidx.core:core:1.13.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\8cf478dec41eed746328fa8046755ba2\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+34-->[androidx.core:core:1.13.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\8cf478dec41eed746328fa8046755ba2\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+35
+36    <application
+37        android:name="android.app.Application"
+37-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:4:9-42
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.13.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\8cf478dec41eed746328fa8046755ba2\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+39        android:extractNativeLibs="true"
+40        android:icon="@mipmap/ic_launcher"
+40-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:5:9-43
+41        android:label="ita_computations" >
+41-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:3:9-41
+42        <activity
+42-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:6:9-27:20
+43            android:name="com.example.ita_computations.MainActivity"
+43-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:7:13-41
+44            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+44-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:12:13-163
+45            android:exported="true"
+45-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:8:13-36
+46            android:hardwareAccelerated="true"
+46-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:13:13-47
+47            android:launchMode="singleTop"
+47-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:9:13-43
+48            android:taskAffinity=""
+48-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:10:13-36
+49            android:theme="@style/LaunchTheme"
+49-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:11:13-47
+50            android:windowSoftInputMode="adjustResize" >
+50-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:14:13-55
+51
+52            <!--
+53                 Specifies an Android theme to apply to this Activity as soon as
+54                 the Android process has started. This theme is visible to the user
+55                 while the Flutter UI initializes. After that, this theme continues
+56                 to determine the Window background behind the Flutter UI.
+57            -->
+58            <meta-data
+58-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:19:13-22:17
+59                android:name="io.flutter.embedding.android.NormalTheme"
+59-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:20:15-70
+60                android:resource="@style/NormalTheme" />
+60-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:21:15-52
+61
+62            <intent-filter>
+62-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:23:13-26:29
+63                <action android:name="android.intent.action.MAIN" />
+63-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:24:17-68
+63-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:24:25-66
+64
+65                <category android:name="android.intent.category.LAUNCHER" />
+65-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:25:17-76
+65-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:25:27-74
+66            </intent-filter>
+67        </activity>
+68        <!--
+69             Don't delete the meta-data below.
+70             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+71        -->
+72        <meta-data
+72-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:30:9-32:33
+73            android:name="flutterEmbedding"
+73-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:31:13-44
+74            android:value="2" />
+74-->D:\ITA\Development\tt\ita_computations\android\app\src\main\AndroidManifest.xml:32:13-30
+75
+76        <provider
+76-->[:open_file_android] D:\ITA\Development\tt\ita_computations\build\open_file_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:9-19:20
+77            android:name="com.crazecoder.openfile.FileProvider"
+77-->[:open_file_android] D:\ITA\Development\tt\ita_computations\build\open_file_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:13-64
+78            android:authorities="com.example.ita_computations.fileProvider.com.crazecoder.openfile"
+78-->[:open_file_android] D:\ITA\Development\tt\ita_computations\build\open_file_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:13-88
+79            android:exported="false"
+79-->[:open_file_android] D:\ITA\Development\tt\ita_computations\build\open_file_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:12:13-37
+80            android:grantUriPermissions="true"
+80-->[:open_file_android] D:\ITA\Development\tt\ita_computations\build\open_file_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:13:13-47
+81            android:requestLegacyExternalStorage="true" >
+81-->[:open_file_android] D:\ITA\Development\tt\ita_computations\build\open_file_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:14:13-56
+82            <meta-data
+82-->[:open_file_android] D:\ITA\Development\tt\ita_computations\build\open_file_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:16:13-18:53
+83                android:name="android.support.FILE_PROVIDER_PATHS"
+83-->[:open_file_android] D:\ITA\Development\tt\ita_computations\build\open_file_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:17:17-67
+84                android:resource="@xml/filepaths" />
+84-->[:open_file_android] D:\ITA\Development\tt\ita_computations\build\open_file_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:18:17-50
+85        </provider>
+86
+87        <activity
+87-->[:url_launcher_android] D:\ITA\Development\tt\ita_computations\build\url_launcher_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:9-11:74
+88            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+88-->[:url_launcher_android] D:\ITA\Development\tt\ita_computations\build\url_launcher_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-74
+89            android:exported="false"
+89-->[:url_launcher_android] D:\ITA\Development\tt\ita_computations\build\url_launcher_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:13-37
+90            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+90-->[:url_launcher_android] D:\ITA\Development\tt\ita_computations\build\url_launcher_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:13-71
+91
+92        <provider
+92-->[:printing] D:\ITA\Development\tt\ita_computations\build\printing\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:8:9-16:20
+93            android:name="net.nfet.flutter.printing.PrintFileProvider"
+93-->[:printing] D:\ITA\Development\tt\ita_computations\build\printing\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:9:13-71
+94            android:authorities="com.example.ita_computations.flutter.printing"
+94-->[:printing] D:\ITA\Development\tt\ita_computations\build\printing\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:10:13-68
+95            android:exported="false"
+95-->[:printing] D:\ITA\Development\tt\ita_computations\build\printing\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:11:13-37
+96            android:grantUriPermissions="true" >
+96-->[:printing] D:\ITA\Development\tt\ita_computations\build\printing\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:12:13-47
+97            <meta-data
+97-->[:open_file_android] D:\ITA\Development\tt\ita_computations\build\open_file_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:16:13-18:53
+98                android:name="android.support.FILE_PROVIDER_PATHS"
+98-->[:open_file_android] D:\ITA\Development\tt\ita_computations\build\open_file_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:17:17-67
+99                android:resource="@xml/flutter_printing_file_paths" />
+99-->[:open_file_android] D:\ITA\Development\tt\ita_computations\build\open_file_android\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:18:17-50
+100        </provider>
+101
+102        <uses-library
+102-->[androidx.window:window:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
+103            android:name="androidx.window.extensions"
+103-->[androidx.window:window:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:24:13-54
+104            android:required="false" />
+104-->[androidx.window:window:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:25:13-37
+105        <uses-library
+105-->[androidx.window:window:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:26:9-28:40
+106            android:name="androidx.window.sidecar"
+106-->[androidx.window:window:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:27:13-51
+107            android:required="false" />
+107-->[androidx.window:window:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5093ab42d2307deb2d7ac0b7f5718c38\transformed\jetified-window-1.2.0\AndroidManifest.xml:28:13-37
+108
+109        <provider
+109-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\d221757f531c672c2df2db4ebaa2cbf1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+110            android:name="androidx.startup.InitializationProvider"
+110-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\d221757f531c672c2df2db4ebaa2cbf1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+111            android:authorities="com.example.ita_computations.androidx-startup"
+111-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\d221757f531c672c2df2db4ebaa2cbf1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+112            android:exported="false" >
+112-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\d221757f531c672c2df2db4ebaa2cbf1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+113            <meta-data
+113-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\d221757f531c672c2df2db4ebaa2cbf1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+114                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+114-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\d221757f531c672c2df2db4ebaa2cbf1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+115                android:value="androidx.startup" />
+115-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\d221757f531c672c2df2db4ebaa2cbf1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+116            <meta-data
+116-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\e80aa748ff6540407d8dba61c0d945fe\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+117                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+117-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\e80aa748ff6540407d8dba61c0d945fe\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+118                android:value="androidx.startup" />
+118-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\e80aa748ff6540407d8dba61c0d945fe\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+119            <meta-data
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+120                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+120-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+121                android:value="androidx.startup" />
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+122        </provider>
+123
+124        <receiver
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+125            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+126            android:directBootAware="false"
+126-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+127            android:enabled="true"
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+128            android:exported="true"
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+129            android:permission="android.permission.DUMP" >
+129-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+130            <intent-filter>
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+131                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+132            </intent-filter>
+133            <intent-filter>
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+134                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+134-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+134-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+135            </intent-filter>
+136            <intent-filter>
+136-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+137                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+137-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+137-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+138            </intent-filter>
+139            <intent-filter>
+139-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+140                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+140-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+140-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Isaac\.gradle\caches\8.10.2\transforms\5f7dcf6815bacc3ae7f099ba801348de\transformed\jetified-profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+141            </intent-filter>
+142        </receiver>
+143    </application>
+144
+145</manifest>
