@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | ITA Computations</title>
+  <style>
+    /* Reuse your site's CSS or add specific styles */
+    .bio-header {
+      background: #7C2929;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 2rem 0;
+    }
+    .cert-badge {
+      border: 1px solid #E0B881;
+      border-radius: 5px;
+      padding: 10px;
+    }
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .achievement-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="bio-header">
+    <h1>Isaac Tetteh-Apotey</h1>
+    <p>Geomatics Engineer | GIS Specialist | Developer</p>
+  </header>
+
+  <main class="container">
+    <section id="career-highlights">
+      <h2>🌍 Field-Proven Expertise</h2>
+      <div class="achievement-grid">
+        <div class="achievement-card">
+          <h3>1,000+ Plots Demarcated</h3>
+          <p>Boundary surveys for residential/commercial developments across Ghana</p>
+        </div>
+        <div class="achievement-card">
+          <h3>10+ Planning Schemes</h3>
+          <p>Zoning frameworks covering 200+ hectares</p>
+          <a href="/gallery#schemes">View Samples</a>
+        </div>
+        <div class="achievement-card">
+          <h3>600+ Plots Digitized</h3>
+          <p>Publicly accessible via <a href="[YOUR_GOOGLE_MYMAPS_LINK]">Google MyMaps</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="technical-skills">
+      <h2>🛠️ Technical Arsenal</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>Surveying</h3>
+          <ul>
+            <li>Total Station (Leica/Trimble)</li>
+            <li>GPS Data Collection</li>
+            <li>Topographic Mapping</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Development</h3>
+          <ul>
+            <li>Flutter (Cross-Platform Apps)</li>
+            <li>Python for Geospatial Analysis</li>
+            <li>Excel VBA Automation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h2>🎓 Certifications</h2>
+      <div class="cert-badge">
+        <h3>Google IT Support Professional</h3>
+        <p>Coursera | Verified: <a href="https://coursera.org/verify/4J68XKD67VLR">4J68XKD67VLR</a></p>
+      </div>
+      <div class="cert-badge">
+        <h3>Advanced GIS Diploma</h3>
+        <p>Alison | Score: 80%</p>
+      </div>
+    </section>
+
+    <section id="cta">
+      <a href="/credentials" class="btn">View Full Credentials</a>
+      <a href="/projects" class="btn-outline">Explore My Tools</a>
+    </section>
+  </main>
+
+  <!-- Reuse your site's footer -->
+  {% include footer.html %} 
+</body>
+</html>

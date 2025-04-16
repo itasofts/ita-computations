@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ita computations - A geospatial app for real-time calculations. Available on Microsoft Store, Google Play, and App Store.">
+  <meta name="keywords" content="geospatial app, ita computations, cross-platform, real-time calculations">
+  <title>ita computations - Geospatial App</title>
+<!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #000000;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header Section */
+    header {
+      text-align: center;
+      padding: 15px 20px;
+      background-color: #7C2929;
+      color: #FFFFFF;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 5px 0;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1rem;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    /* Main Content Box */
+    .main-content {
+      flex: 1;
+      background-color: #FFE0B881;
+      padding: 20px;
+      margin: 0 auto;
+      width: 90%;
+      max-width: 1200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Content Sections */
+    #introduction, #features, #screenshots, #download, #faqs, #tutorials, #cheatsheet {
+      padding: 20px;
+      background-color: #FFFFFF;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #7C2929;
+    }
+
+    /* Footer Section */
+    footer {
+      text-align: center;
+      padding: 4px 10px;
+      background-color: #7C2929;
+      color: #FFFFFF;
+      position: sticky;
+      bottom: 0;
+      z-index: 100;
+    }
+
+    footer p {
+      margin: 2px 0;
+      font-size: 0.8rem;
+    }
+
+    footer a {
+      color: #FFFFFF;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 0.8rem;
+    }
+
+    /* Download Section */
+    #download {
+      padding: 5px 0;
+      background-color: #7C2929;
+      text-align: center;
+      color: #FFFFFF;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    #download h2 {
+      font-size: 1.8rem;
+      margin: 8px 0 12px 0;
+      font-weight: bold;
+    }
+
+    .store-button {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #E0B881;
+      color: #000000;
+      text-decoration: none;
+      border-radius: 4px;
+      margin: 3px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      line-height: 1.3;
+    }
+
+    #download p {
+      margin: 8px 5px 0;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* FAQ Section Styles */
+    #faqs {
+      position: relative;
+    }
+
+    .faq-toggle {
+      padding: 10px 15px;
+      background-color: #7C2929;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 15px;
+      width: 100%;
+      font-weight: bold;
+    }
+
+    .faq-container {
+      display: none;
+    }
+
+    .faq-container.show {
+      display: block;
+    }
+
+    details {
+      margin-bottom: 10px;
+      border: 1px solid #DDD;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      color: #7C2929;
+    }
+
+    /* Tutorials Section */
+    .tutorial-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      background-color: #f9f9f9;
+    }
+
+    .tutorial-card h3 {
+      color: #7C2929;
+      margin-top: 0;
+    }
+
+    .code-block {
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: monospace;
+      overflow-x: auto;
+    }
+
+    /* Cheat Sheet Section */
+    .cheatsheet-container {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .cheatsheet-preview {
+      position: relative;
+      border: 1px solid #E0B881;
+      padding: 10px;
+      background: #FFF9F0;
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .qr-code {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background: white;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .qr-code p {
+      margin: 5px 0 0;
+      font-size: 0.7rem;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #7C2929;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    /* Ad Containers */
+    .ad-container {
+      max-height: 60px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e9e9e9;
+      border: 1px dashed #ccc;
+      margin: 20px auto;
+      padding: 5px !important;
+      text-align: center;
+    }
+
+    /* FAQ Hide Button */
+    .faq-hide-btn {
+      display: block;
+      padding: 10px 15px;
+      background-color: #7C2929;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 15px auto;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .main-content {
+        width: 95%;
+        padding: 10px;
+      }
+      
+      .cheatsheet-container {
+        flex-direction: column;
+      }
+      
+      .cheatsheet-preview {
+        max-width: 100%;
+      }
+      
+      .store-button {
+        display: block;
+        margin: 8px auto;
+        width: 80%;
+      }
+    }
+
+    /* Landscape-specific adjustments */
+    @media (orientation: landscape) {
+      footer {
+        padding: 2px 5px;
+      }
+      
+      footer .ad-container {
+        max-height: 40px !important;
+        min-height: 40px !important;
+        padding: 2px !important;
+      }
+      
+      footer p, footer a {
+        font-size: 0.7rem !important;
+        line-height: 1.2;
+      }
+      
+      .ad-container {
+        max-height: 40px !important;
+        min-height: 40px !important;
+      }
+    }
+    
+    footer a[href="#top"] {
+  font-weight: bold;
+  color: #E0B881 !important; /* Match your gold accent */
+}
+
+footer a[href="#top"]:hover {
+  text-decoration: underline;
+}
+    
+    /* Collapsible Menu */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #7C2929;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  z-index: 1000;
+  cursor: pointer;
+  display: none; /* Hidden by default on desktop */
+}
+
+.collapsible-menu {
+  position: fixed;
+  top: 70px;
+  left: 20px;
+  background: #7C2929;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 999;
+  display: none;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.collapsible-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.collapsible-menu li {
+  margin: 10px 0;
+}
+
+.collapsible-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.collapsible-menu a:hover {
+  text-decoration: underline;
+}
+
+/* Back-to-Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #7C2929;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  z-index: 99;
+}
+
+#back-to-top:hover {
+  background: #E0B881;
+}
+
+/* Show menu toggle on mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.feedback-float {
+  position: fixed;
+  bottom: 80px; /* Above back-to-top button */
+  right: 20px;
+  background: #7C2929;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 30px;
+  z-index: 100;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+}
+
+.feedback-float a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.feedback-float:hover {
+  background: #E0B881;
+  transform: translateY(-3px);
+}
+
+.feedback-float i {
+  margin-right: 5px;
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  .feedback-float {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+.feedback-float i.fa-compass {
+  margin-right: 5px;
+  color: #E0B881; /* Gold accent */
+  transform: rotate(15deg); /* Slightly angled for dynamism */
+  transition: transform 0.3s;
+}
+
+.feedback-float:hover i.fa-compass {
+  transform: rotate(45deg) scale(1.1); /* Playful animation on hover */
+  color: #FFFFFF; /* White on hover */
+}
+
+.video-container {
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.video-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #7C2929;
+    margin-top: 5px;
+}
+
+/* Mobile optimization */
+@media (max-width: 600px) {
+    .video-container iframe {
+        height: 200px;
+    }
+}
+.nav-link {
+  color: #FFFFFF !important; /* White text */
+  background-color: #7C2929; /* Dark red background */
+  padding: 0; /* Removes extra padding around the links */
+  margin: 0; /* Removes extra margin around the links */
+  text-decoration: none; /* Removes underline */
+}
+
+.nav-links a {
+  display: inline; /* Ensures links are inline with the pipe symbol */
+}
+
+.nav-links {
+  display: inline; /* Keeps all links on the same line */
+  gap: 0; /* Removes any gap between links (if flexbox/grid is in use) */
+}
+/* Cookie Consent Modal Styles */
+.cookie-modal {
+  border: 1px solid #E0B881; /* Golden Brown Border */
+  border-radius: 8px;
+  background-color: #FFF9F0; /* Soft Cream Background */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  max-width: 600px;
+  text-align: center;
+  position: fixed; /* Stays on top of the page */
+  bottom: 20px; /* Positioned at the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+/* Modal Heading */
+.cookie-modal h1 {
+  color: #7C2929; /* Dark Red Heading */
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+/* Modal Text */
+.cookie-modal p {
+  color: #000000; /* Black Text */
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Button Container */
+.cookie-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Space between buttons */
+}
+
+/* Accept Button */
+.accept-button {
+  background-color: #7C2929; /* Dark Red Background */
+  color: white; /* White Text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accept-button:hover {
+  background-color: #5A1F1F; /* Slightly Darker Red on Hover */
+}
+
+/* Reject Button */
+.reject-button {
+  background-color: #E0B881; /* Golden Brown Background */
+  color: black; /* Black Text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reject-button:hover {
+  background-color: #D9AA6B; /* Slightly Darker Golden Brown on Hover */
+}
+  </style>
+</head>
+<!-- Cookie Consent Modal -->
+<div class="cookie-modal" id="cookieModal" style="display: none;">
+  <h1>Cookie Consent</h1>
+  <p>We use cookies to personalize content, analyze our traffic, and show relevant ads powered by Google AdSense. By clicking "Accept," you agree to our cookie policy. If you click "Reject," certain functionalities and personalized ads may be limited.</p>
+  <div class="cookie-buttons">
+    <button class="accept-button" onclick="acceptCookies()">Accept</button>
+    <button class="reject-button" onclick="rejectCookies()">Reject</button>
+  </div>
+</div>
+<body>
+
+<!-- Collapsible Menu Button -->
+<button class="menu-toggle" aria-label="Toggle menu">
+  <i class="fas fa-bars"></i>
+</button>
+
+<!-- Navigation Menu (Hidden by Default) -->
+<nav class="collapsible-menu">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#screenshots">Screenshots</a></li>
+    <li><a href="#download">Download</a></li>
+    <li><a href="#tutorials">Tutorials</a></li>
+    <li><a href="#cheatsheet">Cheat Sheet</a></li>
+    </li><a href="blog.html">Visit Geospatial Blog</a><li>
+    <li><a href="#faqs">FAQs</a></li>
+  </ul>
+</nav>
+
+<!-- Back-to-Top Button -->
+<button id="back-to-top" title="Go to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- Header with Top Ad -->
+<header>
+  <div class="header-content">
+    <div class="branding">
+      <h1>ITA Computations</h1>
+      <p class="tagline">Solve Your Survey Computational Needs With Just A Few Clicks</p>
+    </div>
+    <div class="ad-container" style="max-width: 728px; margin: 10px auto;">
+      <!-- AdSense Leaderboard -->
+      <p>Advertisement</p>
+    </div>
+  </div>
+
+  <!-- ===== NAV BAR ===== -->
+<nav class="main-nav" aria-label="Main navigation">
+  <div class="logo" aria-hidden="true">ITA</div>
+  <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="nav-links">
+    <span class="sr-only">Menu</span>
+    ☰
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" aria-current="page" class="nav-link">Home</a>| 
+    <a href="about.html" class="nav-link">About</a>| 
+    <a href="downloads.html" class="nav-link">Downloads</a>| 
+    <a href="credentials.html" class="nav-link">Credentials</a>
+    <a href="blog.html">Blog</a>
+  </div>
+</nav>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-content">
+    <h1 id="hero-heading">Geospatial Solutions</h1>
+    <p>Built by <a href="about.html" class="author-link">Isaac Tetteh-Apotey, <span class="title">Geomatics Engineer</span></a></p>
+  </div>
+</section>
+
+<!-- Main Content Box -->
+  <main class="main-content">
+    <!-- Introduction Section with Inline Ad -->
+    <section id="introduction">
+      <h2>About ITA-Computations</h2>
+      <p>ITA-Computations is a Powerful cross-platform geospatial app designed for land surveying and engineering professionals as well as students. It provides advanced computational tools for coordinate processing. Whether you're computing bearings, distances, areas, or generating detailed sheets, ITA-Computations has you covered.</p>
+    </section>
+
+    <div class="ad-container" style="max-width: 336px;">
+      <!-- Responsive Ad Unit -->
+      <p>Advertisement</p>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features">
+      <h2>Features</h2>
+      <div class="feature">
+        <h3>Bearing and Distance Calculation</h3>
+        <p>Compute bearings and distances between coordinates with ease</p>
+      </div>
+      <div class="feature">
+        <h3>Area Calculation</h3>
+        <p>Calculate areas from coordinates and generate detailed computation sheets</p>
+      </div>
+      
+            <div class="feature">
+        <h3>Sheets Generation</h3>
+        <p>Generate Bearing and Distance sheets, Plan Data sheets, and Beacon Index sheets</p>
+      </div> 
+      
+     <div class="feature">
+        <h3>Light and Dark Modes</h3>
+        <p>Switch between themes for a comfortable viewing experience</p>
+      </div>
+      
+     <div class="feature">
+    <h3>CSV Import</h3>
+    <p>Supports import of coordinates from CSV files for quick calculations</p>
+      </div>
+         <div class="feature">
+        <h3>Offline Functionality</h3>
+        <p>Use the app anywhere, anytime—no internet required</p>
+      </div>
+      <div class="feature">
+    <h3>Cross-Platform Support:</h3>
+        <p>Available for windows, Android and iOS. Scroll down for download links. </p>
+      </div>
+      
+<!-- Floating Feedback Button with Compass Icon -->
+<div class="feedback-float">
+  <a href="https://forms.gle/qyZWDTzS1YS6a74u9" 
+     target="_blank" 
+     title="Report geospatial issues or suggest features">
+    <i class="fas fa-compass"></i> <i class="fas fa-comment-alt"></i> Feedback
+  </a>
+</div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots">
+      <h2>Screenshots</h2>
+      <div class="screenshot-grid">
+        <figure>
+          <img src="images/mobile1.jpg" alt="ita computations geospatial app screenshot" style="max-width:100%">
+          <figcaption>The main Screen of the App on mobile.</figcaption>
+        </figure>
+      </div>
+      <h2>Area Computations</h2>
+      <div class="screenshot-grid">
+        <figure>
+          <img src="images/mobile4.jpg" alt="ita computations geospatial app screenshot" style="max-width:100%">
+          <figcaption>Calculate areas from coordinates and generate detailed computation sheets.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download">
+      <h2>Download</h2>
+      <a href="https://www.microsoft.com/store/apps/your-app" class="store-button">Get it on Microsoft Store</a>
+      <a href="https://play.google.com/store/apps/your-app" class="store-button">Download on Google Play</a>
+      <a href="https://apps.apple.com/your-app" class="store-button">Available on the App Store</a>
+      <p>The app works entirely offline and is available for Android, iOS, and Windows.</p>
+    </section>
+
+    <!-- Tutorials Section with Mid-Page Ad -->
+     
+    <section id="tutorials">
+      <h2>Geospatial Tutorials</h2>
+<div class="tutorial-card">
+    <h3>1. Importing SUR Plugin Into AutoCAD</h3>
+    
+    <!-- YouTube Shorts Embed -->
+    <div class="video-container">
+        <iframe 
+            width="100%" 
+            height="315" 
+            src="https://www.youtube.com/embed/jr27fiF09WY" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+        <p class="video-caption">Watch: SUR Plugin Installation Walkthrough</p>
+    </div>
+
+    <div class="steps">
+        <ol>
+            <li>Open <strong>the folder where AutoCAD is installed and browse to the support folder, example C:\Program Files\Autodesk\AutoCAD 2018\Support</strong></li>
+            <li>Copy and Paste all the files in the <strong>SUR OR JOECAD</strong> folder into the support folder and close it</li>
+            <li>Open <strong>AutoCAD</strong> as an Administrator</li>
+            <li>Type <strong>Menuload</strong> in AutoCAD and press Enter</li>
+            <li>Click <strong>Browse</strong> to navigate to the <strong>Support</strong> Folder and open it</li>
+            <li>From the files of type <strong>Menu, Select Legacy Menu Files (*.MNS*.MNU)</strong> to show the <strong>Menu files</strong>. Select <strong>JoeCad</strong> and Click open and close the menuload dialogue</li>
+            <li>Go to <strong>Customize Quick Access Toolbar Arrow</strong> and Select Show Menu Bar to show all the menus including the SUR Menu</li>
+        </ol>
+    </div>
+</div>
+  
+      <div class="ad-container" style="max-width: 728px;">
+        <!-- Horizontal Ad Unit -->
+        <p>Advertisement</p>
+      </div>
+
+<div class="tutorial-card">
+    <h3>2. Creating CSV Files in Excel</h3>
+    
+    <!-- Video Embed -->
+    <div class="video-container">
+        <iframe 
+            width="100%" 
+            height="315" 
+            src="https://www.youtube.com/embed/jr27fiF09WY" 
+            title="Creating CSV Files for AutoCAD" 
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+        <p class="video-caption">Watch: CSV Creation Tutorial</p>
+    </div>
+
+    <div class="steps">
+        <ol>
+            <li>Open Excel and create columns: <strong>Northings, Eastings, Label</strong></li>
+            <li>Enter your survey data (e.g., <strong>34567.891, 12345.678, 'Boundary Corner'</strong>)</li>
+            <li>Save as <strong>CSV (Comma Delimited)</strong> format</li>
+        </ol>
+    </div>
+    <div class="code-block">
+        # Example CSV Format<br>
+        Northing,Easting,Description<br>
+        34567.891,12345.678,Boundary Corner<br>
+        34612.345,12378.901,Tree Location
+    </div>
+</div>
+
+<div class="ad-container" style="max-width: 728px;">
+    <!-- Horizontal Ad Unit -->
+    <p>Advertisement</p>
+</div>
+
+<div class="tutorial-card">
+    <h3>3. Importing CSV into AutoCAD Using SUR Plugin</h3>
+    
+    <!-- Video Embed -->
+    <div class="video-container">
+        <iframe 
+            width="100%" 
+            height="315" 
+            src="https://www.youtube.com/embed/jr27fiF09WY" 
+            title="Importing CSV to AutoCAD" 
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+        <p class="video-caption">Watch: CSV Import Tutorial</p>
+    </div>
+
+    <div class="steps">
+        <ol>
+            <li>In AutoCAD, Go to <strong>SUR Menu</strong></li>
+            <li>Select Point Plotting</li>
+            <li>Enter password and click Ok</li>
+            <li>Select CSV file from the directory and click Open</li>
+            <li>Enter Absolute Point size, Text Size and Offset Distance of Text, for example 12 Inches or 0.3m respectively</li>
+            <li>Choose File Format. Choose according to the format of your CSV file (Northings, Eastings, Label) N,E,L and click Ok to view the points in AutoCAD.</li>
+            <li>Zoom In and Zoom Out using the Scroll of the mouse to connect the points with a line command.</li>
+        </ol>
+    </div>
+</div>
+
+<div class="tutorial-card">
+    <h3>4. Creating Bearing and Distance for your site plan in AutoCAD using Sur Plugin</h3>
+    
+    <!-- Video Embed -->
+    <div class="video-container">
+        <iframe 
+            width="100%" 
+            height="315" 
+            src="https://www.youtube.com/embed/jr27fiF09WY" 
+            title="Bearing and Distance Calculation" 
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+        <p class="video-caption">Watch: Bearing/Distance Tutorial</p>
+    </div>
+
+    <div class="steps">
+        <ol>
+            <li>In AutoCad Select <strong>line command</strong> and connect all your points in a clockwise direction according to your traverse</li>
+            <li>In AutoCAD, Go to <strong>SUR Menu</strong> and Select <strong>Bearing And Distance(ft) or (m)</strong></li>
+            <li>Type <strong>LR</strong> for Left to Right and press Enter</li>
+            <li>Enter <strong>Text Height</strong> and press Enter</li>
+            <li>Reverse the Bearing Direction (Yes or No): type N for No and Enter</li>
+            <li>Select all the lines for the <strong>Bearing and Distance</strong> and press enter to generate the <strong>bearings and distances</strong> on the <strong>lines selected</strong></li>
+        </ol>
+    </div>
+</div>
+
+<div class="ad-container" style="max-width: 728px;">
+    <!-- Horizontal Ad Unit -->
+    <p>Advertisement</p>
+</div>
+
+<div class="tutorial-card">
+    <h3>5. Creating Grid Lines and Grid Text for your site plan in AutoCAD using Sur Plugin</h3>
+    
+    <!-- Video Embed -->
+    <div class="video-container">
+        <iframe 
+            width="100%" 
+            height="315" 
+            src="https://www.youtube.com/embed/jr27fiF09WY" 
+            title="Grid Lines Creation" 
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+        <p class="video-caption">Watch: Grid Lines Tutorial</p>
+    </div>
+
+    <div class="steps">
+        <ol>
+            <li>In AutoCAD, Go to <strong>SUR Menu</strong> and Select <strong>Grid Plotting</strong></li>
+            <li>Select <strong>lower left Corner about 1000 feet to South-West</strong> of the plot</li>
+            <li>Select <strong>Upper Right Corner about 1000 feet to North East</strong> of the plot</li>
+            <li>Select <strong>Grid lines</strong> and enter <strong>1000</strong> for <strong>Grid Spacing</strong> and click Ok</li>
+            <li>Enter <strong>label Text height</strong> for example 20. <strong>zero for decimal places</strong> and select any color for<strong>Text Color</strong> and click Ok to generate Grid lines and Grid Text</li>
+        </ol>
+    </div>
+</div>
+    </section>
+
+    <!-- Cheat Sheet Section -->
+    <section id="cheatsheet">
+      <h2>Quick Reference Guide</h2>
+      <div class="cheatsheet-container">
+        <div class="cheatsheet-preview">
+          <img src="images/cheatsheet-preview.jpg" alt="Cheat Sheet Preview" style="width:100%">
+          <div class="qr-code">
+            <img src="images/app-download-qr.png" alt="Download App" width="100">
+            <p>Scan to download app</p>
+          </div>
+        </div>
+        <div>
+          <h3>Geospatial Cheat Sheet</h3>
+          <p>One-page summary of:</p>
+          <ul>
+            <li>AutoCAD coordinate workflows</li>
+            <li>CSV formatting standards</li>
+            <li>Troubleshooting tips</li>
+          </ul>
+          <a href="downloads/ITA_CheatSheet_v1.0.pdf" download class="download-btn">
+            Download PDF (0.6MB)
+          </a>
+          <p style="font-size:0.8em; color:#666;">Updated: <span id="current-date"></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faqs">
+      <button class="faq-toggle" onclick="toggleFAQ()">Show FAQs</button>
+      <div class="faq-container">
+        <details>
+            <summary>What does this app do?</summary>
+            <p>This app helps you perform various geospatial calculations, including computing bearing, distance, and area from coordinates.</p>
+        </details>
+
+        <details>
+            <summary>How do I compute bearing and distance?</summary>
+            <p>Enter the coordinates for Point 1 and Point 2, then click "Save and Calculate" to get results.</p>
+        </details>
+
+        <details>
+            <summary>Can I compute area from coordinates?</summary>
+            <p>Yes, enter the boundary coordinates and click "Save and Calculate" to compute the area.</p>
+        </details>
+
+        <details>
+            <summary>How do I switch between light and dark mode?</summary>
+            <p>Open the menu and select "Toggle Dark Mode" to switch themes.</p>
+        </details>
+
+        <details>
+            <summary>How do I download the app?</summary>
+            <p>Select "Download Android Version", "Download iOS Version", or "Download Windows Version" from the menu.</p>
+        </details>
+
+        <details>
+            <summary>Can I import coordinates from a CSV file?</summary>
+            <p>Yes, click "Import CSV (N, E, L)" and ensure your file includes Northing (N), Easting (E), and Labels (L).</p>
+        </details>
+
+        <details>
+            <summary>How do I clear all entered coordinates?</summary>
+            <p>Click "Clear All Rows" to remove all input data.</p>
+        </details>
+
+        <details>
+            <summary>How do I save my calculations?</summary>
+            <p>Click "Save and Calculate" to generate computation sheets.</p>
+        </details>
+
+        <details>
+            <summary>Can I share the generated sheets?</summary>
+            <p>Yes, you can save them as PDFs or print directly from the app.</p>
+        </details>
+
+        <details>
+            <summary>How do I contact support?</summary>
+            <p>Reach out via:</p>
+            <ul>
+                <li>Facebook: [Your Facebook]</li>
+                <li>Twitter: [Your Twitter]</li>
+                <li>Instagram: [Your Instagram]</li>
+                <li>GitHub: [Your GitHub]</li>
+                <li>Email: [Your Support Email]</li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>Can I use this app offline?</summary>
+            <p>Yes, the app works without an internet connection.</p>
+        </details>
+
+        <details>
+            <summary>What units does the app support?</summary>
+            <p>The app supports Meters, Feet, Acres, and Hectares.</p>
+        </details>
+
+        <details>
+            <summary>How do I update the app?</summary>
+            <p>Updates are available on Google Play, App Store, and the website.</p>
+        </details>
+
+        <details>
+            <summary>What if I find a bug?</summary>
+            <p>Report issues via GitHub or email us at [Your Support Email].</p>
+        </details>
+
+        <details>
+            <summary>Can I customize the generated sheets?</summary>
+            <p>Customization options may be added in future updates.</p>
+        </details>
+
+        <details>
+            <summary>How do I suggest new features?</summary>
+            <p>Share your ideas via social media or GitHub.</p>
+        </details>
+        <button class="faq-hide-btn" onclick="toggleFAQ()">Hide FAQs</button>
+      </div>
+    </section>
+  </main>
+
+<!-- Sticky Footer Ad -->
+<footer>
+  <div class="ad-container" style="margin: 0 auto; border-radius: 0;">
+    <!-- Anchor Ad -->
+    <p>Advertisement</p>
+  </div>
+  <div style="padding: 5px; text-align: center;">
+    <p>© 2025 itasofts. All rights reserved.</p>
+    <a href="#" id="footer-back-to-top" style="color: #E0B881; font-weight: bold; text-decoration: none;">Back to Top</a> |
+    <a href="privacy-policy.html">Privacy Policy</a> | 
+    <a href="terms-of-service.html">Terms of Service</a>
+  </div>
+</footer>
+
+  <script>
+    // FAQ Toggle Function
+    function toggleFAQ() {
+      const container = document.querySelector('.faq-container');
+      const button = document.querySelector('.faq-toggle');
+      
+      if (container.style.display === 'none' || !container.style.display) {
+        container.style.display = 'block';
+        button.textContent = 'Hide FAQs';
+      } else {
+        container.style.display = 'none';
+        button.textContent = 'Show FAQs';
+      }
+    }
+
+    // Set current date
+    document.getElementById('current-date').textContent = 
+      new Date().toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      });
+      
+    // Auto-scroll for anchor ads
+    window.addEventListener('scroll', function() {
+      const footerAd = document.querySelector('footer .ad-container');
+      if (window.scrollY > 500) {
+        footerAd.style.display = 'flex';
+      } else {
+        footerAd.style.display = 'none';
+      }
+    });
+    
+    // Toggle collapsible menu
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+  const menu = document.querySelector('.collapsible-menu');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+});
+
+// Back-to-top button
+window.addEventListener('scroll', function() {
+  const backToTopBtn = document.getElementById('back-to-top');
+  if (window.scrollY > 300) {
+    backToTopBtn.style.display = 'block';
+  } else {
+    backToTopBtn.style.display = 'none';
+  }
+});
+
+document.getElementById('back-to-top').addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('.collapsible-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.collapsible-menu').style.display = 'none';
+  });
+});
+    
+  </script>
+  <script>
+  // Show the Cookie Modal on page load
+  window.onload = function() {
+    if (!localStorage.getItem("cookieConsent")) {
+      document.getElementById("cookieModal").style.display = "block";
+    }
+  };
+
+  // Functions for Cookie Actions
+  function acceptCookies() {
+    localStorage.setItem("cookieConsent", "accepted");
+    document.getElementById("cookieModal").style.display = "none";
+    alert("Thank you for accepting cookies. You will experience personalized features.");
+  }
+
+  function rejectCookies() {
+    localStorage.setItem("cookieConsent", "rejected");
+    document.getElementById("cookieModal").style.display = "none";
+    alert("Cookies have been rejected. Some features and ads may not work as intended.");
+  }
+  </script>
+</body>
+</html>
