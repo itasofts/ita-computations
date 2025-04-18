@@ -97,7 +97,7 @@
             background: #5b1f1f;
         }
 
-        .credential-card {
+        .credential-card, .intro-card {
             background: white;
             border-radius: 8px;
             border-left: 4px solid #E0B881;
@@ -105,8 +105,8 @@
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            width: 100%; /* Ensures all cards have equal width */
-            min-height: 200px; /* Ensures consistent height */
+            width: 100%; /* Consistent width for all cards */
+            min-height: 150px; /* Shorter height for the introductory card */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -128,55 +128,53 @@
     </nav>
 
     <div class="container">
-        <div class="credential-card">
-        <section>
+        <!-- Introductory Card -->
+        <div class="intro-card">
             <p>Hello! 👋 I'm Isaac, a Geomatics Engineer with over 14 years of hands-on experience in land surveying, GPS error analysis, and planning scheme development. I now blend that experience with modern tech tools like <strong>Flutter, Python, ArcGIS, and AI</strong> to build real-time geospatial applications.</p>
-        </section>
-             </div>
-
-        <div class="container">
-            <div class="credential-card">
-                <h2>What I Do</h2>
-                <ul>
-                    <li><strong>Geomatics + Mapping:</strong> 1,000+ plots demarcated and 10+ layouts completed</li>
-                    <li><strong>App Development:</strong> Cross-platform geospatial tools using Flutter & VBA</li>
-                    <li><strong>AI-Powered Workflows:</strong> Integrating ChatGPT & Copilot into app logic & automation</li>
-                    <li><strong>UX/UI Design:</strong> Clean, functional interfaces using Figma and Flutter widgets</li>
-                </ul>
-            </div>
-
-            <div class="credential-card">
-                <h2>Current Projects</h2>
-                <ul>
-                    <li>Ghana Control Point Locator App (offline-ready)</li>
-                    <li><a href="https://itasofts.github.io/ITA-Computations" target="_blank">ITA-Computations Web App</a> — cross-platform geospatial tool for surveyors</li>
-                    <li>Building a personal portfolio site with GitHub Pages</li>
-                </ul>
-            </div>
-
-            <div class="credential-card">
-                <h2>Certifications <span class="badge">2024</span></h2>
-                <ul>
-                    <li>Technical Support & Networking – Google (Coursera)</li>
-                    <li>GIS Mapping & Remote Sensing – University of Toronto & Alison</li>
-                    <li>PC Hardware & Troubleshooting – CompTIA A+ via Alison</li>
-                </ul>
-                <p><a href="credentials.html">View Full Credentials</a></p>
-            </div>
-
-            <div class="credential-card">
-                <h2>Let's Collaborate</h2>
-                <ul>
-                    <li>Freelance geospatial & AI integration projects</li>
-                    <li>UI/UX work or consulting</li>
-                    <li>Virtual macOS environments for iOS app development</li>
-                </ul>
-            </div>
         </div>
 
-        <div class="cta">
-            <a href="contact.html">Get In Touch</a>
+        <!-- Credential Cards -->
+        <div class="credential-card">
+            <h2>What I Do</h2>
+            <ul>
+                <li><strong>Geomatics + Mapping:</strong> 1,000+ plots demarcated and 10+ layouts completed</li>
+                <li><strong>App Development:</strong> Cross-platform geospatial tools using Flutter & VBA</li>
+                <li><strong>AI-Powered Workflows:</strong> Integrating ChatGPT & Copilot into app logic & automation</li>
+                <li><strong>UX/UI Design:</strong> Clean, functional interfaces using Figma and Flutter widgets</li>
+            </ul>
         </div>
+
+        <div class="credential-card">
+            <h2>Current Projects</h2>
+            <ul>
+                <li>Ghana Control Point Locator App (offline-ready)</li>
+                <li><a href="https://itasofts.github.io/ITA-Computations" target="_blank">ITA-Computations Web App</a> — cross-platform geospatial tool for surveyors</li>
+                <li>Building a personal portfolio site with GitHub Pages</li>
+            </ul>
+        </div>
+
+        <div class="credential-card">
+            <h2>Certifications <span class="badge">2024</span></h2>
+            <ul>
+                <li>Technical Support & Networking – Google (Coursera)</li>
+                <li>GIS Mapping & Remote Sensing – University of Toronto & Alison</li>
+                <li>PC Hardware & Troubleshooting – CompTIA A+ via Alison</li>
+            </ul>
+            <p><a href="credentials.html">View Full Credentials</a></p>
+        </div>
+
+        <div class="credential-card">
+            <h2>Let's Collaborate</h2>
+            <ul>
+                <li>Freelance geospatial & AI integration projects</li>
+                <li>UI/UX work or consulting</li>
+                <li>Virtual macOS environments for iOS app development</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="cta">
+        <a href="contact.html">Get In Touch</a>
     </div>
 </body>
 </html>
