@@ -1,0 +1,66 @@
+Terms of Service
+Effective Date: March 22, 2025
+Last Updated: [Will reflect the document's actual modification date]
+
+1. Acceptance of Terms
+Welcome to ITA Computations (the "App"), developed and operated by iTAsofts ("we", "us", "our"). By downloading and using this App, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.
+
+2. App Description
+The App is designed for land surveyors, geomatics engineers, and students in these fields. It allows users to:
+
+Compute bearing and distance between coordinates.
+
+Calculate area from coordinates and generate computation sheets.
+
+Generate Bearing and Distance sheets, Plan Data sheets, and Beacon Index sheets.
+
+All calculations are performed locally on your device, and no data is shared with external servers.
+
+3. Use of the App
+You agree to use the App only for lawful purposes and in accordance with these Terms of Service. You must not:
+
+Use the App in any way that could damage, disable, overburden, or impair the App.
+
+Reverse engineer, decompile, disassemble, or modify the App.
+
+Transfer, sell, resell, or distribute the App without written permission from iTAsofts.
+
+4. Intellectual Property
+All content, features, and functionality of the App, including but not limited to text, graphics, logos, and software, are the exclusive property of iTAsofts and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
+
+5. Free Edition Limitations
+The Free Edition of the App is for private, non-commercial, home computer use only and is to be evaluated for seven (7) days. After this period, you must either request the licensed version or uninstall the App. Use of the Free Edition within any organization or for commercial purposes is strictly prohibited.
+
+6. Disclaimer of Warranties
+The App is distributed "as is" and without warranties as to performance, merchantability, or any other warranties, whether expressed or implied. You use the App at your own risk.
+
+7. Limitation of Liability
+To the maximum extent permitted by applicable law, in no event shall iTAsofts or its employees, contractors, agents, distributors, or suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever arising out of the use of or inability to use the App, even if iTAsofts has been advised of the possibility of such damages.
+
+8. Governing Law
+These Terms of Service are governed by and construed in accordance with the laws of Ghana, without regard to its conflict of law principles.
+
+9. Changes to These Terms
+We reserve the right to update these Terms of Service at any time. Any changes will be effective immediately upon posting the updated terms on this page.
+
+10. Ads and Third-Party Services
+This App may display advertisements powered by Google AdSense and utilize Google Analytics. By using this App, you acknowledge and agree that:
+
+Google AdSense may collect and use data to show relevant ads based on your preferences.
+
+Advertisements help support the free version of this app. They are automatically selected by Google based on your app usage and general location. We do not control the specific ads shown.
+
+You have the option to manage cookie preferences via the Cookie Consent pop-up.
+
+Data collected through these services is subject to Google's Privacy Policy.
+For details on managing ad preferences, visit Google Ad Settings.
+
+11. Data Protection
+We comply with data protection laws including GDPR and CCPA. Personal data collected via ads/analytics is processed per our Privacy Policy.
+
+12. Contact Us
+If you have any questions about these Terms of Service, please contact us at:
+Email: itasofts@gmail.com
+WhatsApp: +233559846747
+
+Our Privacy Policy further explains data handling practices.

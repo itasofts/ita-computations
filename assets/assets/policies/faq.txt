@@ -1,0 +1,68 @@
+Q: What does this app do?
+
+A: This app helps you perform various geospatial calculations, including computing bearing, distance, and area from coordinates.
+
+Q: How do I compute bearing and distance?
+
+A: Enter the coordinates for Point 1 and Point 2, then click "Save and Calculate" to get results.
+
+Q: Can I compute area from coordinates?
+
+A: Yes, enter the boundary coordinates and click "Save and Calculate" to compute the area.
+
+Q: How do I switch between light and dark mode?
+
+A: Open the menu and select "Toggle Dark Mode" to switch themes.
+
+Q: How do I download the app?
+
+A: Select "Download Android Version", "Download iOS Version", or "Download Windows Version" from the menu.
+
+Q: Can I import coordinates from a CSV file?
+
+A: Yes, click "Import CSV (N, E, L)" and ensure your file includes Northing (N), Easting (E), and Labels (L).
+
+Q: How do I clear all entered coordinates?
+
+A: Click "Clear All Rows" to remove all input data.
+
+Q: How do I save my calculations?
+
+A: Click "Save and Calculate" to generate computation sheets.
+
+Q: Can I share the generated sheets?
+
+A: Yes, you can save them as PDFs or print directly from the app.
+
+Q: How do I contact support?
+
+A: Reach out via:
+- Facebook: https://facebook.com/itasofts
+- Twitter: https://twitter.com/itasofts
+- Instagram: https://instagram.com/itasofts
+- GitHub: https://github.com/itasofts
+- Email: itasofts@gmail.com
+
+Q: Can I use this app offline?
+
+A: Yes, the app works without an internet connection.
+
+Q: What units does the app support?
+
+A: The app supports Meters, Feet, Acres, and Hectares.
+
+Q: How do I update the app?
+
+A: Updates are available on Google Play, App Store, and the website.
+
+Q: What if I find a bug?
+
+A: Report issues via GitHub or email us at itasofts@gmail.com.
+
+Q: Can I customize the generated sheets?
+
+A: Customization options may be added in future updates.
+
+Q: How do I suggest new features?
+
+A: Share your ideas via social media or GitHub.

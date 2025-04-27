@@ -1,0 +1,46 @@
+©iTAsofts
+
+END-USER LICENSE AGREEMENT
+Copyright © 2025 iTAsofts, All rights reserved.
+
+1. Welcome to iTA Computations (the "App"). The App is developed and operated by iTAsofts ("we", "us", "our"). By downloading and using this App, you agree to be bound by these terms and conditions. If you do not agree to these terms, please do not use the App.
+
+2. App Description 
+
+The App is designed for land surveyors, Geomatics engineers and students in these fields for computing Bearing and Distance, Area computations, preparing Beacon Index, and Plan Data sheets. The "Enter Your Coordinates Here" menu allows user to enter coordinates in the format (Northings, Eastings, Label (N, E, L)). coordinates can either be added one at a time by adding a row to the GUI, or adding multiple rows an inputing the coordinates manually.The next option is the copy and paste single or multiple rows in to the "Paste Coordinates X,Y,Beacon" text box and clicking on the "Paste & Add Rows" button and the copied coordinates will be added to the GUI.There is an option to import CSV files saved in the format suggested by clicking on the Import CSV (N, E, L) button to add the coordinates to the GUI. User can then click on the "Save and Calculate" button for the calculations to be done.The App dynamically calculates and creates the aforementioned sheets, which can be verified and printed or saved to PDF. 
+
+3. Use of the App: 
+You agree to use the App only for lawful purposes and in accordance with these terms and conditions. You must not use the App in any way that could damage, disable, overburden, or impair the App, or interfere with any other party's use and enjoyment of the App.
+4. Intellectual Property 
+All content, features, and functionality of the App, including but not limited to the App, text, graphics, logos, and software, are the exclusive property of iTAsofts and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+
+5. Limitations
+
+•The Free Edition is for private, non-commercial, home computer use only and is to be evaluated for seven (7) days. After this period, you can decide to request for the licensed version or uninstall the App.
+•Use of the Free Edition within any organization or for commercial purposes is strictly prohibited.
+•The Free Edition or Trial Edition may be freely distributed if the distribution package is not modified. No person or company may charge a fee for the distribution of this App without written permission from the copyright holder.
+•You may not reverse engineer, decompile, disassemble, modify, translate the App, or make any attempt to discover the source code of the App.
+•You may not transfer, sell, resell, offer for sale, or distribute the App. The sale of copies of this App is strictly forbidden. It is a violation of this EULA to sell, loan, rent, lease, borrow, or transfer the use of copies of the App except as permitted by the terms and conditions of a separate agreement signed by iTAsofts.
+
+6. Privacy Policy 
+
+iTAsofts may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. The furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
+
+7. Disclaimer of Warranties 
+
+This App and the accompanying files are distributed and sold "as is" and without warranties as to performance, merchantability, or any other warranties, whether expressed or implied. You use the App at your own risk.
+
+8. Limitation of Liability 
+
+To the maximum extent permitted by applicable law, in no event shall iTAsofts or its employees, contractors, agents, distributors, or suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, without limitation, damages for loss of business profits, business interruption, loss of business information, loss of data, loss of business opportunity, loss or damages to property, injuries to any person, or any pecuniary loss) arising out of the use of or inability to use the App, even if iTAsofts has been advised of the possibility of such damages. In any case, the entire liability of iTAsofts under any provision of this EULA shall be limited EXCLUSIVELY TO PRODUCT REPLACEMENT.
+
+9. Reservation of Rights iTAsofts reserves the right to change the license agreement of the App. iTAsofts also reserves the right to change the product and prices without notice.
+
+10. Governing Law 
+
+This EULA is governed by and construed in accordance with the laws of Ghana, without regard to its conflict of law principles. Copyright laws and international copyright treaties, as well as other intellectual property laws and treaties, protect the App. The App is licensed, not sold.
+
+11. Contact Information 
+
+Support will only be provided by email and WhatsApp Only. Queries regarding the installation and use of the App should be submitted by email to itasofts@gmail.com or WhatsApp to +233559846747. If you have questions about purchasing or updating our products, please email us at itasofts@gmail.com or WhatsApp to +233559846747.
+

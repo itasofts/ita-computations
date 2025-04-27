@@ -1,0 +1,31 @@
+End User License Agreement
+Last Updated: [Insert current date dynamically in Flutter]
+
+1. Acceptance of Terms
+By accessing or using ITA Computations, you agree to comply with and be bound by these Terms of Service, including any additional guidelines and future modifications. If you do not agree with these terms, you should refrain from using the app.
+
+2. App Description
+ITA Computations is a geospatial application designed for land surveyors. It offers tools for managing coordinates, computing bearing and distance between points, and accessing survey control points in Ghana. The app also provides an easy-to-use interface for GPS data processing.
+
+3. Changes to Terms
+We may update these terms periodically. All updates will be posted on this page with a new "Last Updated" date. Your continued use of the app after such changes will indicate your acceptance of the modified terms.
+
+4. User Responsibilities
+Users must use the app responsibly and not engage in any activities that could harm or disrupt the app’s functionality. You agree to provide accurate information when using the app, and not to use it for illegal activities.
+
+5. Data Collection and Privacy
+ITA Computations may collect user data, including location information for geospatial processing. Your privacy is important, and data is processed in accordance with our Privacy Policy.
+
+6. Intellectual Property
+All content, including text, images, and app components, is the property of ITA Computations and is protected by intellectual property laws. You may not reproduce, distribute, or use any part of the app without permission.
+
+7. Limitation of Liability
+ITA Computations is not responsible for any damages arising from the use or inability to use the app. We do not guarantee the accuracy or completeness of any data or computations provided by the app.
+
+8. Governing Law
+These terms shall be governed by the laws of Ghana. Any disputes shall be resolved in the courts of Ghana.
+
+9. Contact Us
+If you have any questions or concerns regarding these Terms of Service, please contact us via:
+📧 Email: itasofts@gmail.com
+📱 WhatsApp: +233123456789

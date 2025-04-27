@@ -1,0 +1,85 @@
+Privacy Policy
+
+Effective Date: March 22, 2025
+Last Updated: [Automatically updated when viewed on web]
+
+1. Introduction
+Welcome to ITA Computations (the "App"), developed by iTAsofts ("we", "us", "our"). This Privacy Policy explains how we handle your information when you use our App. By using the App, you agree to this policy and our Terms of Service.
+
+2. Information We Collect
+The App is designed to operate entirely offline. As such:
+
+No Personal Data Collection: We do not collect, store, or share personal data (e.g., name, email, location) from the app's core functionality.
+
+Local Data Storage: All entered data (coordinates, calculations) is stored only on your device.
+
+3. Third-Party Services
+The App uses these third-party services that may collect data:
+
+Google AdSense: Displays personalized ads. Google may collect:
+
+Device information (OS, browser)
+
+Approximate location (country-level)
+
+Interaction data (clicks, impressions)
+This data is used to show relevant ads and measure performance. Learn more at Google's Advertising Policy.
+
+Google Analytics (if enabled): Tracks usage metrics like:
+
+Session duration
+
+Feature usage
+
+Error reports
+Data is aggregated and anonymized. Opt-out via Google’s Opt-Out Tool.
+
+4. Cookie Policy
+We use cookies for:
+
+Ad personalization (Google AdSense)
+
+Analytics (Google Analytics)
+
+Storing your cookie consent preference
+
+Manage Cookies:
+
+Accept/reject via the cookie consent pop-up
+
+Disable third-party cookies in your browser settings
+
+Opt out of personalized ads at adssettings.google.com
+
+5. Data Security
+While the app operates offline, we recommend:
+
+Using device security features (passcodes, encryption)
+
+Regularly updating your OS and the app
+
+6. Your Rights (GDPR/CCPA)
+Under privacy laws, you may have the right to:
+
+Access data collected by third parties (via Google's tools)
+
+Request deletion of associated data
+
+Withdraw cookie consent (clear app data or browser cookies)
+
+To exercise these rights, contact us or use the provided third-party tools.
+
+7. Changes to This Policy
+We will notify users of material changes via:
+
+In-app alerts (for major updates)
+
+Updated "Last Modified" date on this page
+
+8. Contact Us
+For privacy-related inquiries:
+Email: itasofts@gmail.com
+WhatsApp: +233559846747
+
+For third-party data requests, contact:
+Google AdSense Support
